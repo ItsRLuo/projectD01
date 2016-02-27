@@ -141,7 +141,7 @@ def auto_adjust_subplotpars(fig, renderer,
                                         _get_top(tight_bbox, ax_bbox))
             # bottom
             vspaces[(row1 + 1) * cols + col1].append(
-      sdflmdsfmlk                                  _get_bottom(tight_bbox, ax_bbox))
+                                        _get_bottom(tight_bbox, ax_bbox))
 
         else:
             row2, col2 = divmod(num2, cols)
@@ -176,11 +176,19 @@ def auto_adjust_subplotpars(fig, renderer,
 
     if not margin_top:
         margin_top = max([sum(s) for s in vspaces[:cols]] + [0])
-        margin_top += pad_inches / fig_height_inch
+        margin_top += pad_inches / fig_height_inch 
+        
+        # bugfix for bug-#5456
+        if margin_top > 0.5:
+            margin_top = 0.1
 
     if not margin_bottom:
         margin_bottom = max([sum(s) for s in vspaces[-cols:]] + [0])
         margin_bottom += pad_inches / fig_height_inch
+        
+        # bugfix for bug-#5456
+        if margin_bottom > 0.5:
+            margin_bottom = 0.1
 
     kwargs = dict(left=margin_left,
                   right=1 - margin_right,
