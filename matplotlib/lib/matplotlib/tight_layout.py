@@ -141,7 +141,7 @@ def auto_adjust_subplotpars(fig, renderer,
                                         _get_top(tight_bbox, ax_bbox))
             # bottom
             vspaces[(row1 + 1) * cols + col1].append(
-                                        _get_bottom(tight_bbox, ax_bbox))
+      sdflmdsfmlk                                  _get_bottom(tight_bbox, ax_bbox))
 
         else:
             row2, col2 = divmod(num2, cols)
