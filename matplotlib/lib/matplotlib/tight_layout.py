@@ -19,19 +19,19 @@ rcParams = matplotlib.rcParams
 
 
 def _get_left(tight_bbox, axes_bbox):
-    return abs(axes_bbox.xmin - tight_bbox.xmin)
+    return axes_bbox.xmin - tight_bbox.xmin
 
 
 def _get_right(tight_bbox, axes_bbox):
-    return abs(tight_bbox.xmax - axes_bbox.xmax)
+    return tight_bbox.xmax - axes_bbox.xmax
 
 
 def _get_bottom(tight_bbox, axes_bbox):
-    return abs(axes_bbox.ymin - tight_bbox.ymin)
+    return axes_bbox.ymin - tight_bbox.ymin
 
 
 def _get_top(tight_bbox, axes_bbox):
-    return abs(tight_bbox.ymax - axes_bbox.ymax)
+    return tight_bbox.ymax - axes_bbox.ymax
 
 
 def auto_adjust_subplotpars(fig, renderer,
@@ -196,7 +196,7 @@ def auto_adjust_subplotpars(fig, renderer,
         h_axes = ((1 - margin_right - margin_left) -
                   hspace * (cols - 1)) / cols
 
-        kwargs["wspace"] = hspace / h_axes
+        kwargs["wspace"] = abs(hspace / h_axes)
 
     if rows > 1:
         vspace = max([sum(s) for s in vspaces[cols:-cols]])
