@@ -2,9 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 """
-This test will use imshow() with tight_layout() outside the loop.
+This test will use subplot with imshow() and tight_layout() outside the loop.
 The test make sure the fix does not break anything that was working
 before.
+The expected output should show all 16 image
 """
 
 plt.figure()

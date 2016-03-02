@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 """
-This test will use imshow() with tight_layout() inside the loop.
-This test should create a png figure without any image missing.
+This test will use subplot with imshow() and tight_layout() inside the loop.
+The expected output should show all 25 image.
 """
 
 plt.figure()
