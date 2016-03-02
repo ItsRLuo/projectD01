@@ -26,4 +26,4 @@ Deliverable 2 : Our report for 'deliverable 2.pdf' is under the folder Deliverab
 Deliverable 3 Step 1: Our issue listing for 'deliverable 3-IssueListstep1.pdf' is under the folder Deliverable 3 Step 1. 
 
 ## Deliverable3 Step2
-Deliverable 3 Step 2: Our test case for each issue that is been fixed. This folder contains the report for Deliverable 3 Step 2. Also contains all the test files for the issues fixed. The test cases can be found in the folders corresponding to the issue number from the original list and their issue number from the matplotlib repository (issue#_bug#_acceptance_test).
+Deliverable 3 Step 2: Our test case for each issue that is been fixed. This folder contains the report for Deliverable 3 Step 2 ('Deliverable 3 - Step 2.pdf'). Also contains all the test files for the issues fixed. The test cases can be found in the folders corresponding to the issue number from the original list and their issue number from the matplotlib repository (issue#_bug#_acceptance_test).
