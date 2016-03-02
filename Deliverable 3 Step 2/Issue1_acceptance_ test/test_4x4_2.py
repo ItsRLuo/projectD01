@@ -1,6 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+This test will use imshow() with tight_layout() inside the loop.
+The test make sure the bug is fixed.
+"""
+
 plt.figure()
 for i in range(16):
     ax= plt.subplot(4,4 ,i+1)

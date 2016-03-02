@@ -171,6 +171,7 @@ def auto_adjust_subplotpars(fig, renderer,
         margin_left += pad_inches / fig_width_inch
 
         # Ensure margins do not take more than half the figure
+        # Fix for Issue#5456
         if margin_left > 0.5:
             margin_left = 0.05
 
@@ -178,7 +179,8 @@ def auto_adjust_subplotpars(fig, renderer,
     if not margin_right:
         margin_right = max([sum(s) for s in hspaces[cols::cols + 1]] + [0])
         margin_right += pad_inches / fig_width_inch
-
+        
+        # Fix for Issue#5456
         if margin_right > 0.5:
             margin_right = 0.05
 
@@ -186,6 +188,7 @@ def auto_adjust_subplotpars(fig, renderer,
         margin_top = max([sum(s) for s in vspaces[:cols]] + [0])
         margin_top += pad_inches / fig_height_inch 
         
+        # Fix for Issue#5456
         if margin_top > 0.5:
             margin_top = 0.05
 
@@ -193,6 +196,7 @@ def auto_adjust_subplotpars(fig, renderer,
         margin_bottom = max([sum(s) for s in vspaces[-cols:]] + [0])
         margin_bottom += pad_inches / fig_height_inch
         
+        # Fix for Issue#5456
         if margin_bottom > 0.5:
             margin_bottom = 0.05
 
@@ -209,7 +213,8 @@ def auto_adjust_subplotpars(fig, renderer,
         hspace += hpad_inches / fig_width_inch
         h_axes = ((1 - margin_right - margin_left) -
                   hspace * (cols - 1)) / cols
-
+        
+        #fix for Issue#4976
         kwargs["wspace"] = abs(hspace / h_axes)
 
     if rows > 1:

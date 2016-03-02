@@ -1,6 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+"""
+This test will use imshow() with tight_layout() inside the loop.
+The expected output should show all image without any image missing.
+"""
 plt.figure()
 for i in range(15):
     ax= plt.subplot(3,5 ,i+1)

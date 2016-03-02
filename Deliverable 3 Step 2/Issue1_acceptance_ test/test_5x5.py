@@ -1,6 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+This test will use imshow() with tight_layout() inside the loop.
+This test should create a png figure without any image missing.
+"""
+
 plt.figure()
 for i in range(25):
     ax= plt.subplot(5,5 ,i+1)
