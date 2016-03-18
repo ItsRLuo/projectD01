@@ -7,6 +7,7 @@
 - [Deliverable2](#deliverable-2)
 - [Deliverable3 Step1](#deliverable3-step1)
 - [Deliverable3 Step2](#deliverable3-step2)
+- [Deliverable4] (#deliverable4)
 
 ## About Us
 We are a Team04 Sky Blue
@@ -27,3 +28,6 @@ Deliverable 3 Step 1: Our issue listing for 'deliverable 3-IssueListstep1.pdf' i
 
 ## Deliverable3 Step2
 Deliverable 3 Step 2: Our test case for each issue that is been fixed. This folder contains the report for Deliverable 3 Step 2 ('Deliverable 3 - Step 2.pdf'). Also contains all the test files for the issues fixed. The test cases can be found in the folders corresponding to the issue number from the original list and their issue number from the matplotlib repository (issue#_bug#_acceptance_test).
+
+## Deliverable4
+Deliverable 4 : Our report for 'deliverable 4.pdf' is under the folder Deliverable 4.
