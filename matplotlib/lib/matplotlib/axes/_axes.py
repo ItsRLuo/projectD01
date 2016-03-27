@@ -2364,10 +2364,8 @@ class Axes(_AxesBase):
 
         Call signatures::
 
-          stem(y, linefmt='b-', markerfmt='bo', basefmt='r-',
-              orientation = {'horizontal'|'vertical'})
-          stem(x, y, linefmt='b-', markerfmt='bo', basefmt='r-',
-              orientation = {'horizontal'|'vertical'})
+          stem(y, linefmt='b-', markerfmt='bo', basefmt='r-', orientation={'vertical'|'horizontal'})
+          stem(x, y, linefmt='b-', markerfmt='bo', basefmt='r-', orientation={'vertical'|'horizontal'})
 
         A stem plot plots vertical lines (using *linefmt*) at each *x*
         location from the baseline to *y*, and places a marker there
@@ -2376,39 +2374,17 @@ class Axes(_AxesBase):
 
         If no *x* values are provided, the default is (0, 1, ..., len(y) - 1)
 
-        Optional parameters:
-        --------------------
-        linefmt : line format string
-            Format for the lines protruding from the baseline to the
-            stem markers.
-
-        markerfmt: marker format string
-            Format for the markers.
-
-        basefmt: line format string
-            Format for the baseline.
-
-        vertical: string, optional (horizontal)
-            If 'vertical', will produce a vertically-oriented stem plot,
-            else it will produce a horizontally-oriented stem plot.
-
-        bottom: num, optional (0)
-            The location of the base line.
-
-        label: string
-            Label for the stem container returned.
-
-        Returns
-        -------
-        The return value is ``(markerline, stemlines, baseline)``.
+        Return value is a tuple (*markerline*, *stemlines*,
+        *baseline*).
 
         .. seealso::
             This
             `document <http://www.mathworks.com/help/techdoc/ref/stem.html>`_
             for details.
 
-        Examples
-        --------
+
+        **Example:**
+
         .. plot:: mpl_examples/pylab_examples/stem_plot.py
         """
         remember_hold = self._hold
@@ -2443,44 +2419,37 @@ class Axes(_AxesBase):
             basefmt = kwargs.pop('basefmt', args[2])
         except IndexError:
             basefmt = kwargs.pop('basefmt', 'r-')
-
-        # Check the orientation variable to see if the user
-        # wants a vertical or horizontal stem plot
-        orientation = kwargs.pop('orientation', 'horizontal')
-
-        if orientation not in ('horizontal', 'vertical'):
-            raise ValueError("'%s' is not a valid orientation" % orientation)
+	try:
+            orientation = kwargs.pop('orientation', args[3])
+        except IndexError:
+            orientation = kwargs.pop('orientation', 'vertical')
 
         bottom = kwargs.pop('bottom', None)
         label = kwargs.pop('label', None)
-
-        if orientation == 'vertical':
-            x, y = y, x
-
-        markerline, = self.plot(x, y, markerfmt, label="_nolegend_")
+	if (orientation == "vertical"):
+            markerline, = self.plot(x, y, markerfmt, label="_nolegend_")
+	elif (orientation == "horizontal"):
+            markerline, = self.plot(y, x, markerfmt, label="_nolegend_")
 
         if bottom is None:
             bottom = 0
 
         stemlines = []
         for thisx, thisy in zip(x, y):
-            if orientation == 'vertical':
-                thisx, thisy = thisy, thisx
-                l, = self.plot([bottom, thisy], [thisx, thisx],  linefmt,
-                               label="_nolegend_")
-            else:
-                l, = self.plot([thisx, thisx], [bottom, thisy], linefmt,
-                               label="_nolegend_")
+            if (orientation == "vertical"):
+                l, = self.plot([thisx, thisx], [bottom, thisy],linefmt,
+                           label="_nolegend_")    
+            elif (orientation == "horizontal"):
+                l, = self.plot([bottom, thisy], [thisx, thisx], linefmt,
+                           label="_nolegend_")
             stemlines.append(l)
-
-        if orientation == 'vertical':
-            x, y = y, x
-            baseline, = self.plot([bottom, bottom], [np.amin(x), np.amax(x)],
-                                  basefmt, label="_nolegend_")
-        else:
-            baseline, = self.plot([np.amin(x), np.amax(x)], [bottom, bottom],
-                                  basefmt, label="_nolegend_")
-
+        
+        if (orientation == "vertical"):
+            baseline, = self.plot([np.amin(x), np.amax(x)],[bottom, bottom], 
+                              basefmt, label="_nolegend_")
+        elif (orientation == "horizontal"):
+            baseline, = self.plot([bottom, bottom],[np.amin(x), np.amax(x)], 
+                              basefmt, label="_nolegend_")
         self.hold(remember_hold)
 
         stem_container = StemContainer((markerline, stemlines, baseline),
