@@ -31,3 +31,6 @@ Deliverable 3 Step 2: Our test case for each issue that is been fixed. This fold
 
 ## Deliverable4
 Deliverable 4 : Our report for 'deliverable 4.pdf' is under the folder Deliverable 4.
+
+##Deliverable 5 Step 1
+Deliverable 5 Step 1:  features are in the matplot lib folder, userguide is in the what'snew folder and added our deliverable pdf
