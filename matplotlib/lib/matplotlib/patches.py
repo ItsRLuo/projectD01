@@ -3742,7 +3742,7 @@ class ArrowStyle(_Style):
             head_length = self.head_length * mutation_size
             in_f = inside_circle(x2, y2, head_length)
             arrow_path = [(x0, y0), (x1, y1), (x2, y2)]
-
+            print(arrow_path)
             from .bezier import NonIntersectingPathException
 
             try:
@@ -3922,10 +3922,10 @@ class ArrowStyle(_Style):
             super(ArrowStyle.Wedge, self).__init__()
 
         def transmute(self, path, mutation_size, linewidth):
-
             x0, y0, x1, y1, x2, y2 = self.ensure_quadratic_bezier(path)
 
             arrow_path = [(x0, y0), (x1, y1), (x2, y2)]
+
             b_plus, b_minus = make_wedged_bezier2(
                                     arrow_path,
                                     self.tail_width * mutation_size / 2.,

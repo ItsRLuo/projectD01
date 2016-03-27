@@ -432,11 +432,16 @@ def make_wedged_bezier2(bezier2, width, w1=1., wm=0.5, w2=0.):
     bezier lines having a width roughly parralel to given one separated by
     *width*.
     """
-
     # c1, cm, c2
     c1x, c1y = bezier2[0]
     cmx, cmy = bezier2[1]
     c3x, c3y = bezier2[2]
+    # find c12, c23 and c123 which are middle points of c1-cm, cm-c3 and
+        # c12-c23
+    c12x, c12y = (c1x + cmx) * .5, (c1y + cmy) * .5
+    c23x, c23y = (cmx + c3x) * .5, (cmy + c3y) * .5
+    c123x, c123y = (c12x + c23x) * .5, (c12y + c23y) * .5
+    cmx, cmy = c23x, c23y
 
     # t1 and t2 is the anlge between c1 and cm, cm, c3.
     # They are also a angle of the tangential line of the path at c1 and c3
@@ -454,12 +459,6 @@ def make_wedged_bezier2(bezier2, width, w1=1., wm=0.5, w2=0.):
         get_normal_points(c3x, c3y, cos_t2, sin_t2, width * w2)
     )
 
-    # find c12, c23 and c123 which are middle points of c1-cm, cm-c3 and
-    # c12-c23
-    c12x, c12y = (c1x + cmx) * .5, (c1y + cmy) * .5
-    c23x, c23y = (cmx + c3x) * .5, (cmy + c3y) * .5
-    c123x, c123y = (c12x + c23x) * .5, (c12y + c23y) * .5
-
     # tangential angle of c123 (angle between c12 and c23)
     cos_t123, sin_t123 = get_cos_sin(c12x, c12y, c23x, c23y)
 
@@ -473,7 +472,7 @@ def make_wedged_bezier2(bezier2, width, w1=1., wm=0.5, w2=0.):
     path_right = find_control_points(c1x_right, c1y_right,
                                      c123x_right, c123y_right,
                                      c3x_right, c3y_right)
-
+    print(path_left, path_right)
     return path_left, path_right
 
 
