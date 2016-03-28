@@ -34,4 +34,10 @@ Deliverable 3 Step 2: Our test case for each issue that is been fixed. This fold
 Deliverable 4 : Our report for 'deliverable 4.pdf' is under the folder Deliverable 4.
 
 ##Deliverable 5 Step 1
-Deliverable 5 Step 1:  features are in the matplot lib folder, userguide is in the what'snew folder and added our deliverable pdf
+Deliverable 5 Step 1: 
+Implemented features are in the matplotlib folder.
+    - Feature 2 - Horizontal Stem Plot #5856
+    - Bonus Feature - Accepting figure arg. in subplot2grid #6105 
+
+User guides are in matplotlib/doc/users/whats_new folder and also in our Deliverable5a.pdf report in the Deliverable 5 Step 1 folder. 
+In addition, we have stored user acceptance test and test suites in our Deliverable 5 Step 1 folder.
