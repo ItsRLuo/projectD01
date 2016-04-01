@@ -8,7 +8,7 @@
 - [Deliverable3 Step1](#deliverable3-step1)
 - [Deliverable3 Step2](#deliverable3-step2)
 - [Deliverable4] (#deliverable4)
-- [Deliverable 5] (#deliverable 5)
+- [Deliverable 5] (#deliverable-5)
 
 ## About Us
 We are a Team04 Sky Blue
@@ -33,7 +33,7 @@ Deliverable 3 Step 2: Our test case for each issue that is been fixed. This fold
 ## Deliverable4
 Deliverable 4 : Our report for 'deliverable 4.pdf' is under the folder Deliverable 4.
 
-##Deliverable 5
+## Deliverable 5
 Deliverable 5: 
 Implemented features are in the matplotlib folder.
     - Feature 2 - Horizontal Stem Plot #5856
