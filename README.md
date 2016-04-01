@@ -8,7 +8,7 @@
 - [Deliverable3 Step1](#deliverable3-step1)
 - [Deliverable3 Step2](#deliverable3-step2)
 - [Deliverable4] (#deliverable4)
-- [Deliverable5] (#deliverable5)
+- [Deliverable 5] (#deliverable 5)
 
 ## About Us
 We are a Team04 Sky Blue
