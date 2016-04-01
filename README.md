@@ -36,8 +36,8 @@ Deliverable 4 : Our report for 'deliverable 4.pdf' is under the folder Deliverab
 ## Deliverable 5
 Deliverable 5: 
 Implemented features are in the matplotlib folder.
-    - Feature 2 - Horizontal Stem Plot #5856
-    - Bonus Feature - Accepting figure arg. in subplot2grid #6105 
+- Feature 2 - Horizontal Stem Plot #5856
+- Bonus Feature - Accepting figure arg. in subplot2grid #6105 
 
 User guides are in matplotlib/doc/users/whats_new folder and also in our Deliverable5.pdf report in the Deliverable 5 folder. 
 In addition, we have stored user acceptance test and test suites in our Deliverable 5 folder.
